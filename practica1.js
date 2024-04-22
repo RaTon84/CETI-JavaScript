@@ -174,48 +174,108 @@ function invertedLadderPattern(height){
 invertedLadderPattern(5)
 /*28*/
 
+/*29*/
+var persona = new Object()
+persona.name = "Hernan"
+persona.apellido = "Viltez"
+persona.edad = 39
+persona.direccion = "g.perez 1601"
+var persona = {
+    name: "Hernan",
+    apellido: "Viltez",
+    edad: 39,
+    direccion: "g.perez 1601"
+};
+/*30*/
+function initials(person){
+    return person.name.charAt(0)+"."+person.apellido.charAt(0)+"."
+}
+initials(persona)
+/*31*/
+var persona2 = {
+    name: "Javier",
+    apellido: "Veliz",
+    edad: 50,
+    direccion: "g.perez 1601"
+};
+function printAttributes(object){
+    console.log(Object.values(object))
+}
+printAttributes(persona2)
+/*32*/
+var persona = {
+    name: "Hernan",
+    apellido: "Viltez",
+    edad: 39,
+    direccion: "g.perez 1601"
+};
+var persona2 = {
+    name: "Hernan",
+    apellido: "Veliz",
+    edad: 50,
+    direccion: "g.perez 1601"
+};
+var personas = [persona,persona2]
+function oldest(people){   
+    var oldPerson = people[0]
+    people.forEach(element => {
+        if (element.edad > oldPerson.edad) {
+            oldPerson=element
+        }
+    });
+    console.log("la persona mas vieja es: "+oldPerson.name)
+}
+oldest(personas)
+/*33*/ 
+var persona = {
+    name: "Hernan",
+    apellido: "Viltez",
+    edad: 39,
+    direccion: "g.perez 1601"
+};
+var persona2 = {
+    name: "Juan",
+    apellido: "Veliz",
+    edad: 50,
+    direccion: "g.perez 1601"
+};
+var persona3 = {
+    name: "Hernan",
+    apellido: "Viltez",
+    edad: 39,
+    direccion: "g.perez 1601"
+};
+var persona4 = {
+    name: "Javier",
+    apellido: "Veliz",
+    edad: 50,
+    direccion: "g.perez 1601"
+};
+var personas = [persona,persona2,persona3,persona4]
+function names2(people) {
+    var array = []
+    people.forEach(element => {
+        if (!array.includes(element.name)) {
+            array.push(element.name)
+        }            
+    });
+console.log(array)
+}
+names2(personas)
+/*34*/
+function neighbours(people){
+
+}
+/*35*/
+function moveWith(people,name1,surname1,name2,surname2){
+
+}
 
 /*entrega 1
 Se pide que escriba la función personasConIniciales(personas, iniciales)
 que dado un array de personas y un String que representa iniciales 
 de una persona, describe un nuevo array con todas las personas que 
 tienen esas iniciales.*/
-var personas = ["norma","valeria","veronica"]
-var iniciales = ["v","a"]
-function personasConIniciales(personas,iniciales){
-    var encontradas =[]
-    personas.forEach(element => { 
-        var ini = iniciales.join()
-        var cant = ini.length
-        for (let index = 0; index < cant; index--) {
-            if(element.charAt(index)==ini.charAt(index)){                
-                encontradas.push(element)
-           }               
-        }          
-    });
-    cant
-    return encontradas
-}
-personasConIniciales(personas,iniciales)
-
-
-var personas = ["norma","valeria","veronica"]
-var iniciales = ["v","a"]
-function personasConIniciales(personas,iniciales){
-    var encontradas =[]
-    personas.forEach(element => { 
-        for (let index = 0; index < iniciales.length; index++) {
-            if(element.charAt(index)==iniciales.join().charAt(index)){                
-                encontradas.push(element)
-           }               
-        }          
-    });
-    return encontradas
-}
-
-personasConIniciales(personas,iniciales)
-
-
 var personas = ["narma","valeria","veronica"]
 var iniciales = "va"
 function personasConIniciales(personas,iniciales){
