@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 3</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+        .centered {
+            text-align: center;
+            padding: 30px;;
+        }
+        .btn {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            font-size: large;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 3</h1>
+    <ul>
+        <li>Reacting to click events</li>
+        <li>Reacting to context menu events</li>
+    </ul>
+
+    <div class="centered">
+        <button class="btn" onclick="btn_clicked_left()" oncontextmenu="btn_clicked_right(event)">Click Me</button>
+    </div>
+
+    <script>
+        function btn_clicked_left() {
+            alert("You have left clicked the button");
+        }
+        function btn_clicked_right(ev) {
+            alert("You have right clicked the button");
+            ev.preventDefault();
+            return false;
+        }
+    </script>
+</body>
+</html>

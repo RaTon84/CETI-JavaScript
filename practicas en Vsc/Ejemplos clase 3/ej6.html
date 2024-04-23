@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 6</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+        .centered {
+            text-align: center;
+            padding: 30px;;
+        }
+        .btn {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            font-size: large;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: yellowgreen;
+        }
+        .boxes {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 6</h1>
+    <ul>
+        <li>Retrieving multiple elements</li>
+        <li>Manipulating styles</li>
+    </ul>
+
+    <div class="centered">
+        <button class="btn" onclick="change_color()">Turn all boxes red</button>
+
+        <div class="boxes">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+
+    <script>
+        function change_color() {
+            // const boxesElems = document.getElementsByTagName('div');
+            const boxesElems = document.getElementsByClassName('box');
+            for (const boxElem of boxesElems) {
+                boxElem.setAttribute('style', 'background-color: red;')
+            }
+        }
+    </script>
+</body>
+</html>

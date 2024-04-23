@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 7</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+        .centered {
+            text-align: center;
+            padding: 30px;;
+        }
+        .btn {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            font-size: large;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: yellowgreen;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid white;
+        }
+        .color-box.black   { background-color: black; }
+        .color-box.silver  { background-color: silver; }
+        .color-box.gray    { background-color: gray; }
+        .color-box.white   { background-color: white; }
+        .color-box.maroon  { background-color: maroon; }
+        .color-box.red     { background-color: red; }
+        .color-box.purple  { background-color: purple; }
+        .color-box.green   { background-color: green; }
+        .color-box.lime    { background-color: lime; }
+        .color-box.olive   { background-color: olive; }
+        .color-box.yellow  { background-color: yellow; }
+        .color-box.fuchsia { background-color: fuchsia; }
+        .color-box.navy    { background-color: navy; }
+        .color-box.blue    { background-color: blue; }
+        .color-box.teal    { background-color: teal; }
+        .color-box.aqua    { background-color: aqua; }
+
+    </style>
+</head>
+<body>
+    <h1>Example 7</h1>
+    <ul>
+        <li>Manipulating selects</li>
+        <li>Accessing trigger element through event</li>
+        <li>Manipulating classes</li>
+    </ul>
+
+    <div class="centered">
+
+        <div class="color-box black"></div>
+        <select onchange="select_changed(event)">
+            <option>black</option>
+            <option>silver</option>
+            <option>gray</option>
+            <option>white</option>
+            <option>maroon</option>
+            <option>red</option>
+            <option>purple</option>
+            <option>green</option>
+            <option>lime</option>
+            <option>olive</option>
+            <option>yellow</option>
+            <option>fuchsia</option>
+            <option>navy</option>
+            <option>blue</option>
+            <option>teal</option>
+            <option>aqua</option>
+        </select>
+    </div>
+
+    <script>
+        function select_changed(ev) {
+            const boxElem = document.getElementsByClassName('color-box')[0];
+            const selectVal = ev.srcElement.value;
+            boxElem.setAttribute('class', `color-box ${selectVal}`);
+        }
+    </script>
+</body>
+</html>

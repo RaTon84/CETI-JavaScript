@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 4</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+        .centered {
+            text-align: center;
+            padding: 30px;;
+        }
+        .btn {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            font-size: large;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: yellowgreen;
+        }
+        .result {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 4</h1>
+    <ul>
+        <li>Reacting to mouse enter and leave events</li>
+        <li>Accessing DOM elements by ID</li>
+        <li>Manipulating DOM element contents</li>
+    </ul>
+
+    <div class="centered">
+        <button class="btn" onmouseenter="btn_mouse_enter()" onmouseleave="btn_mouse_leave()">Hover Me</button>
+    </div>
+
+    <div class="centered">
+        <span>El mouse is </span>
+        <span id="result">OUTSIDE</span>
+        <span>the button</span>
+    </div>
+
+    <script>
+        const resultBox = document.getElementById('result');
+
+        function btn_mouse_enter() {
+            resultBox.innerText = 'INSIDE';
+        }
+        function btn_mouse_leave() {
+            resultBox.innerText = 'OUTSIDE';
+        }
+    </script>
+</body>
+</html>

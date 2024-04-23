@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 5</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+        .centered {
+            text-align: center;
+            padding: 30px;;
+        }
+        .btn {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            font-size: large;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: yellowgreen;
+        }
+        .result {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 5</h1>
+    <ul>
+        <li>Manipulating keyboard events</li>
+        <li>Regular expressions</li>
+        <li>More on parse and NaN</li>
+    </ul>
+
+    <div class="centered">
+        <label for="only_numbers">Only numbers are allowed on this input. Try for yourself</label>
+        <input type="text" id="only_numbers" onkeyup="input_key_up()">
+    </div>
+
+    <script>
+        const onlyNumberInput = document.getElementById('only_numbers');
+
+        function input_key_up() {
+            const inputText = onlyNumberInput.value;
+            if (! /^-?\d+$/.test(inputText)) {
+                alert('Only numbers are allowed');
+                onlyNumberInput.value = inputText.substring(0, inputText.length - 1);
+            }
+        }
+    </script>
+</body>
+</html>

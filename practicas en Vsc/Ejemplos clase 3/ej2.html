@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 2</title>
+    <style>
+        body {
+            background-color: steelblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 2</h1>
+    <ul>
+        <li>Simple user input with prompt and confirm</li>
+        <li>Converting strings to numbers</li>
+        <li>String interpolations</li>
+        <li>Functions as arguments</li>
+        <li>Delayed execution</li>
+    </ul>
+
+    <script>
+        // prompt asks for user input as text
+
+        let nameInput;
+        do {
+            nameInput = prompt("What is your name?");
+        } while (!nameInput);
+
+        const surnameInput = prompt("What is your surname?");
+        const ageInput = prompt("What is your age?");
+        // Confirm asks for a yes or no question, returning a boolean
+        const wantsAnswer = confirm("Do you want to know the answer to the ultimate question of life, the universe, and everything else?");
+
+        const name = nameInput.charAt(0).toUpperCase() + nameInput.substring(1).toLowerCase();
+        const surname = surnameInput.charAt(0).toUpperCase() + surnameInput.substring(1).toLowerCase();
+        const age = parseInt(ageInput);
+
+        alert(`Nice to meet you ${name} ${surname}`);
+        if (wantsAnswer) {
+            if (age < 18) {
+                alert("You are under age, so you cannot know the answer to the ultimate question");
+            } else {
+                alert("The answer to the ultimate question of life, the universe, and everything is... Let me thing about it...");
+                setTimeout(function() {
+                    alert("It's... 42");
+                }, 5000);
+            }
+        } else {
+            alert("Too bad you don't want the answer");
+        }
+    </script>
+</body>
+</html>

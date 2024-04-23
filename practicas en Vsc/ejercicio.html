@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 6</title>
+    <style>
+        header {
+            text-align: justify;
+            padding: 10px;
+            border-bottom: 1px solid gray;
+        }
+        .flex {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+        .manager {
+            width: 25%;
+            padding: 10px;
+            border-right: 1px solid gray;
+        }
+        .page {
+            width: 75%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio clase 3</h1>
+    </header>
+    <div class="flex">
+        <div class="manager">
+            <label>Color del tema</label>
+            <select onchange="select_changed(event)">
+                <option>Claro</option>
+                <option>Oscuro</option>
+            </select>
+
+            <br>
+
+            <button>Presione para ingresar titulo</button>
+        </div>
+
+        <div id="page" class="page">
+            <h1>Un título va aquí</h1>
+            
+            <p>
+                Aenean nec venenatis justo. Aenean ex nisi, tincidunt et
+                eros ac, scelerisque vulputate mauris. Nunc dapibus sed mi
+                et faucibus. Duis gravida dui maximus magna mattis fermentum.
+                Nunc interdum dapibus cursus. Fusce tincidunt dolor id diam
+                rutrum tristique. Cras condimentum sed augue id vehicula.
+                Nam non sapien pulvinar, rutrum ante eget, consectetur mi.
+                Maecenas tortor ipsum, aliquam id fringilla non, ullamcorper
+                non tortor. Duis laoreet, risus ac interdum venenatis,
+                tortor libero venenatis nisi, sed pulvinar tortor velit
+                nec ipsum. Suspendisse ultrices arcu mollis nisi aliquam
+                molestie. Proin sagittis metus nec nunc luctus vulputate.
+                Maecenas dui purus, imperdiet molestie leo sit amet,
+                ultricies aliquet libero.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function select_changed(ev){
+            const body = document.getElementsByTagName('body');
+            const selectValue = ev.srcElement.value;
+            if (selectValue=="Claro") {
+                body.setAttribute('class', style="background-color:#FF0000;")
+            }
+            managerElement.setAttribute('class', `color-box ${selectVal}`);
+
+        }
+    </script>
+</body>
+</html>
