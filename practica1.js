@@ -276,13 +276,13 @@ Se pide que escriba la función personasConIniciales(personas, iniciales)
 que dado un array de personas y un String que representa iniciales 
 de una persona, describe un nuevo array con todas las personas que 
 tienen esas iniciales.*/
-var personas = ["narma","valeria","veronica"]
+
 var iniciales = "va"
 function personasConIniciales(personas,iniciales){
     var encontradas =[]
-    personas.forEach(element => {   
-        var cant = iniciales.length           
-            if(element.substr(0,cant)== iniciales){                
+    personas.forEach(element => {                    
+            if(element.name.charAt(0)==iniciales.charAt(0) &&
+                element.apellido.charAt(0)==iniciales.charAt(1)){                
                 encontradas.push(element)
            }               
     });
