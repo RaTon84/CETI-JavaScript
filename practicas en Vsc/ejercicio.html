@@ -37,15 +37,11 @@
                 <option>Claro</option>
                 <option>Oscuro</option>
             </select>
-
             <br>
-
-            <button>Presione para ingresar titulo</button>
+            <button onclick="change_title()">Presione para ingresar titulo</button>
         </div>
-
         <div id="page" class="page">
-            <h1>Un título va aquí</h1>
-            
+            <h1 id="changeTitle">Un título va aquí</h1>            
             <p>
                 Aenean nec venenatis justo. Aenean ex nisi, tincidunt et
                 eros ac, scelerisque vulputate mauris. Nunc dapibus sed mi
@@ -63,16 +59,20 @@
             </p>
         </div>
     </div>
-
     <script>
         function select_changed(ev){
-            const body = document.getElementsByTagName('body');
+            const fondo = document.getElementsByTagName('body')[0];
             const selectValue = ev.srcElement.value;
             if (selectValue=="Claro") {
-                body.setAttribute('class', style="background-color:#FF0000;")
+                fondo.setAttribute('style', 'background-color: white; color: black;');
+            }else{
+                fondo.setAttribute('style', 'background-color: black; color: white;');
             }
-            managerElement.setAttribute('class', `color-box ${selectVal}`);
-
+        }
+        function change_title(){
+            const titleElement=document.getElementById('changeTitle');
+            let title=prompt('Ingrese un titulo');
+            titleElement.innerText=title;
         }
     </script>
 </body>
