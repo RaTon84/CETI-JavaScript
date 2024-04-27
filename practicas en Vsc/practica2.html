@@ -43,7 +43,7 @@
         </ul>
     </div>
     <div class="punto6">
-        <ol></ol>
+        <ol class="listaDesordenada"></ol>
     </div>
     <style>
         .cuadrado{
@@ -122,6 +122,22 @@
         a button that states “delete”. If the delete button is pressed, a confirm dialog is shown. If the
         user confirms, then an alert should state that the element with such value should be deleted
         (Real delete is not needed). If canceled, nothing should happen. C*/
+        function delete_text(){
+            if (window.confirm("Desea borrar la informacion")) {
+                alert("el Elemento sera borrado")
+            } 
+        }
+        /*Write a web page that contains an ol. Upon start, the script should add five li elements with the
+        letters from A to E.*/
+        let cont = 0
+        const letras = [A,B,C,D,E]
+        const ol = document.getElementsByClassName('listaDesordenada')[cont];
+        funciton addElements(){
+            letras.forEach(element => {
+                
+            });
+        }
+
 
 
     </script>
