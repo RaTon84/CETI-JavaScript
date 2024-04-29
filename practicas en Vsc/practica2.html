@@ -47,7 +47,12 @@
     </div>
     <div class="punto7">
         <div class="color-box black"></div>
-        <select onchange="select_changed(event)">
+        <select class="removeOption">
+            <option>opcion1</option>
+            <option>opcion2</option>
+            <option>opcion3</option>
+            <option>opcion4</option>
+            <option>opcion5</option>
         </select>
     </div>
     <style>
@@ -152,26 +157,15 @@
         addElements();
         /*8Write a web page that contains a select with 5 options. Upon start, the script should remove
         three of the options, the second, third and fourth*/
-        const opciones = ["opcion1","opcion2","opcion3","opcion4","opcion5"];
-        const selector = document.getElementsByTagName('select')[0];
-        function addElements2(){
+        ////////////////////////////////////////// NO ANDA///////////////////////
+        let opciones = [2,3,4]
+        function removeElements(opciones){
             opciones.forEach(element => {
-                /*creo el elemento a insertar en html (option) */
-                let option = document.createElement('option');
-                /*creo el texto a agregar*/
-                let text = document.createTextNode(element);
-                /*otra opcion con comandos html*/
-                option.innerHTML = element
-                /*inserto el texto al elemento*/
-                //li.appendChild(text);
-                /*inserto la lista que ya coniene el texto*/
-                selector.appendChild(option);
-            });
+                var optionElement = document.getElementsByTagName('option')[element-1];
+                optionElement.remove();
+            });            
         }
-        addElements2()
-        function reomveElements(){
-
-        }
+        removeElements(opciones)
         </script>
     
 </body>
