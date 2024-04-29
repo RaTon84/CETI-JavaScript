@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-10">
                 <input
-                    onkeypress="pressKey()"
+                    onkeyup="pressKey()"
                     id="todo-text"
                     type="text"
                     class="form-control"
@@ -58,16 +58,15 @@
         const inputText = document.getElementById('todo-text');
         function pressKey(){
             if (inputText.value.length == 0) {
-                buttonAgregar.removeAttribute('disabled');                                     
+                buttonAgregar.disabled = true;                                
             }else{
-                buttonAgregar.setAttribute('disabled');  
-                alert('2')////////nunca entra
+                buttonAgregar.disabled = false;
             }                           
         }
        /*2 Now let’s implement the add logic. When the button is pressed, a new element in the
         todo list should be added. This includes not only the text, but also the delete button
         associated with it.*/
-        
+
 
 
     </script>
