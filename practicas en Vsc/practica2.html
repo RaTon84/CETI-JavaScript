@@ -45,6 +45,11 @@
     <div class="punto6">
         <ol class="listaDesordenada"></ol>
     </div>
+    <div class="punto7">
+        <div class="color-box black"></div>
+        <select onchange="select_changed(event)">
+        </select>
+    </div>
     <style>
         .cuadrado{
             background-color: rgb(83, 83, 83);
@@ -52,7 +57,6 @@
             height: 100px;
         }
     </style>
-
     <script>        
         /*punto1-Write a web page that prints the URL of the page to the console*/
         const direccionUrl = location.href;
@@ -127,7 +131,7 @@
                 alert("el Elemento sera borrado")
             } 
         }        
-        /*Write a web page that contains an ol. Upon start, the script should add five li elements with the
+        /*7 Write a web page that contains an ol. Upon start, the script should add five li elements with the
         letters from A to E.*/        
         const letras = ["A","B","C","D","E"];
         const listaDesordenada = document.getElementsByClassName('listaDesordenada')[0];
@@ -146,7 +150,29 @@
             });
         }
         addElements();
-    </script>
+        /*8Write a web page that contains a select with 5 options. Upon start, the script should remove
+        three of the options, the second, third and fourth*/
+        const opciones = ["opcion1","opcion2","opcion3","opcion4","opcion5"];
+        const selector = document.getElementsByTagName('select')[0];
+        function addElements2(){
+            opciones.forEach(element => {
+                /*creo el elemento a insertar en html (option) */
+                let option = document.createElement('option');
+                /*creo el texto a agregar*/
+                let text = document.createTextNode(element);
+                /*otra opcion con comandos html*/
+                option.innerHTML = element
+                /*inserto el texto al elemento*/
+                //li.appendChild(text);
+                /*inserto la lista que ya coniene el texto*/
+                selector.appendChild(option);
+            });
+        }
+        addElements2()
+        function reomveElements(){
+
+        }
+        </script>
     
 </body>
 
