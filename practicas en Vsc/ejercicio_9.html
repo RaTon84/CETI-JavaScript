@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col-10">
                 <input
+                    onkeypress="pressKey()"
                     id="todo-text"
                     type="text"
                     class="form-control"
@@ -31,7 +32,7 @@
                 >
             </div>
             <div class="col-2">
-                <button id="todo-add" class="btn btn-success">Agregar</button>
+                <button disabled id="todo-add" class="btn btn-success">Agregar</button>
             </div>
         </div>
     </div>
@@ -49,6 +50,26 @@
             </div>
         </div>
     </div>
+    <script>
+        /*1  First let’s implement the add button enable-disable behavior. If the text in the input is
+        empty, the button should remain as disabled, but it should be enabled as soon as there
+        is any text in the input*/
+        const buttonAgregar = document.getElementById('todo-add');
+        const inputText = document.getElementById('todo-text');
+        function pressKey(){
+            if (inputText.value.length == 0) {
+                buttonAgregar.removeAttribute('disabled');                                     
+            }else{
+                buttonAgregar.setAttribute('disabled');  
+                alert('2')////////nunca entra
+            }                           
+        }
+       /*2 Now let’s implement the add logic. When the button is pressed, a new element in the
+        todo list should be added. This includes not only the text, but also the delete button
+        associated with it.*/
+        
 
+
+    </script>
 </body>
 </html>
