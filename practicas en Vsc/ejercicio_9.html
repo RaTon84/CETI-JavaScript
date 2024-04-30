@@ -82,10 +82,12 @@
         confirm dialog should appear. If the user confirms the deletion, then the item is actually
         removed from the list, if canceled, nothing is removed.*/
         function removeCosa(numero){
+            //cont-=1
             const divRemove = document.getElementsByClassName('alert alert-info alert-dismissible fade show')[numero-1];
             divRemove.remove();            
         }
         function removeCosa2(numero){
+            const divRemove = document.getElementsByClassName('alert alert-info alert-dismissible fade show')[numero-1];
             cosasParaHacer.removeChild()
         }
 
