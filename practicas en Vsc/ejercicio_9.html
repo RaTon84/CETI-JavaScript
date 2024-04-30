@@ -38,11 +38,11 @@
         <div class="row" id="cosasParaHacer">
             <div class="alert alert-info alert-dismissible fade show" role="alert">
                 La primer cosa para hacer.
-                <button type="button" class="btn-close" aria-label="Close"></button>
+                <button type="button" class="btn-close" aria-label="Close" onclick="removeCosa(1)"></button>
             </div>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
                 La segunda cosa para hacer.
-                <button type="button" class="btn-close" aria-label="Close"></button>
+                <button type="button" class="btn-close" aria-label="Close" onclick="removeCosa(2)"></button>
             </div>
         </div>
     </div>
@@ -62,19 +62,31 @@
         /*2 Now let’s implement the add logic. When the button is pressed, a new element in the
          todo list should be added. This includes not only the text, but also the delete button
          associated with it.*/
-        function addCosa() {
-            const cosasParaHacer = document.getElementById('cosasParaHacer');
+         let cont = 3;
+         const cosasParaHacer = document.getElementById('cosasParaHacer');
+        function addCosa() {            
             const objetoAgregar = document.createElement('div');
             objetoAgregar.setAttribute('class', 'alert alert-info alert-dismissible fade show');
             objetoAgregar.setAttribute('role', 'alert');
-            objetoAgregar.innerHTML = inputText.value + ". " + '<button type="button" class="btn-close" aria-label="Close"></button>';
+            objetoAgregar.innerHTML = inputText.value + ". " + '<button type="button" class="btn-close" aria-label="Close" onclick="removeCosa('+cont+')" id="div"></button>';
             cosasParaHacer.appendChild(objetoAgregar);
             removeTextInput();
+            cont+=1;
         }
         /*3 Let’s make sure an element is not added twice. For that, once the element is added,
         let’s remove any text in the input, and keep the input focused.*/
         function removeTextInput(){
             inputText.value ='';
+        }
+        /*4  Now let’s implement the delete logic. When the delete button of an item is pressed, a
+        confirm dialog should appear. If the user confirms the deletion, then the item is actually
+        removed from the list, if canceled, nothing is removed.*/
+        function removeCosa(numero){
+            const divRemove = document.getElementsByClassName('alert alert-info alert-dismissible fade show')[numero-1];
+            divRemove.remove();            
+        }
+        function removeCosa2(numero){
+            cosasParaHacer.removeChild()
         }
 
     </script>
