@@ -36,11 +36,11 @@
 
     <div class="container">
         <div class="row" id="cosasParaHacer">
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <div class="alert alert-info alert-dismissible fade show" role="alert" id="div1">
                 La primer cosa para hacer.
                 <button type="button" class="btn-close" aria-label="Close" onclick="removeCosa(1)"></button>
             </div>
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <div class="alert alert-info alert-dismissible fade show" role="alert" id="div2">
                 La segunda cosa para hacer.
                 <button type="button" class="btn-close" aria-label="Close" onclick="removeCosa(2)"></button>
             </div>
@@ -68,6 +68,7 @@
             const objetoAgregar = document.createElement('div');
             objetoAgregar.setAttribute('class', 'alert alert-info alert-dismissible fade show');
             objetoAgregar.setAttribute('role', 'alert');
+            objetoAgregar.setAttribute('id', 'div'+cont);
             objetoAgregar.innerHTML = inputText.value + ". " + '<button type="button" class="btn-close" aria-label="Close" onclick="removeCosa('+cont+')" id="div"></button>';
             cosasParaHacer.appendChild(objetoAgregar);
             removeTextInput();
@@ -82,14 +83,24 @@
         confirm dialog should appear. If the user confirms the deletion, then the item is actually
         removed from the list, if canceled, nothing is removed.*/
         function removeCosa(numero){
-            //cont-=1
-            const divRemove = document.getElementsByClassName('alert alert-info alert-dismissible fade show')[numero-1];
+            const divRemove = document.getElementById('div'+numero);            
+            console.log(divRemove);
             divRemove.remove();            
         }
-        function removeCosa2(numero){
-            const divRemove = document.getElementsByClassName('alert alert-info alert-dismissible fade show')[numero-1];
-            cosasParaHacer.removeChild()
-        }
+        /*cosasParaHacer.addEventListener('click', (e)=>{
+            let ele = document.getSelection();
+            console.log(ele.previousElementSibling);
+            delete e;
+            cosasParaHacer.removeChild(e);
+            console.log(e.target);
+            console.log(e.parentNode);
+            console.log(event.currentTarget);
+            console.log(e.getSelection);
+            console.log(e.target.previousElementSibling);
+            console.log(e.closest('div'));
+            console.log(e.getSelection);
+        });*/
+        /////////////NO ANDA como traer el valor de determiado child///////////
 
     </script>
 </body>
