@@ -1,0 +1,23 @@
+body {
+    background-color: steelblue;
+    color: whitesmoke;
+}
+.centered {
+    text-align: center;
+    padding: 30px;;
+}
+.btn {
+    padding: 20px;
+    background-color: green;
+    color: white;
+    border: 1px solid white;
+    font-size: large;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: yellowgreen;
+}
+
+h2 {
+    color: green;
+}

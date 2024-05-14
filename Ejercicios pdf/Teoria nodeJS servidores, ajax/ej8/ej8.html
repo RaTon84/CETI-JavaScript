@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Rodas Bonjour">
+    <title>Ej. 8</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Example 8</h1>
+    <ul>
+        <li>External files</li>
+        <li>Full JS event listeners</li>
+        <li>Event with other objects than DOM elements</li>
+        <li>Document ready events</li>
+        <li>Global environment pollution</li>
+    </ul>
+
+    <div class="centered">
+        <img src="image.jpg">
+        <div id="image-status"></div>
+    </div>
+
+    <div class="centered">
+        <!--
+        <button id="aclickear" class="btn" onclick="btn_clicked_left()" oncontextmenu="btn_clicked_right(event)">Click Me</button>
+        -->
+        <button id="aclickear" class="btn">Click Me</button>
+        <div id="performed-action"></div>
+    </div>
+
+    <div class="centered">
+        <div>Width is: <span id="window-width"></span></div>
+        <div>Height is: <span id="window-height"></span></div>
+    </div>
+
+    <!--
+    <script>
+        let performedActionSpan = document.getElementById('performed-action');
+        let widthSpan = document.getElementById('window-width');
+        let heightSpan = document.getElementById('window-height');
+
+        function btn_clicked_left() {
+            performedActionSpan.textContent = "You have left clicked the button";
+        }
+
+        function btn_clicked_right(ev) {
+            performedActionSpan.textContent  = "You have right clicked the button";
+            ev.preventDefault();
+            return false;
+        }
+
+        function setWindowSizes() {
+            widthSpan.textContent = window.innerWidth;
+            heightSpan.textContent = window.innerHeight;
+        }
+
+        setWindowSizes();
+    </script>
+    -->
+
+    <script src="./script.js"></script>
+</body>
+</html>
