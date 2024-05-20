@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="http://127.0.0.1:3000/ping" method="get">       
+        <button type="submit" id="submit">alert</button>
+    </form>
+    <script>
+        document.getElementById('submit').addEventListener('click', ()=>{
+          
+            fetch('http://127.0.0.1:3000/ping')
+                .then(response => response.json())
+                .then(data => console.log(data)) 
+
+            alert("http://127.0.0.1:3000/ping");
+        });        
+    </script>
+</body>
+</html>
