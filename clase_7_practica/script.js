@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const btnPop = document.getElementById('btn_pop');
     const popup = document.getElementById('pop_up');
     const btnClosed = document.getElementById('closed');
-    const pop_menu = document.getElementById('pop_menu')
+    //const pop_menu = document.getElementById('pop_menu')
     //const winClosed = document.body
 
     btnPop.addEventListener('click', function(){
