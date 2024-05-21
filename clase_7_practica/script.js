@@ -28,10 +28,16 @@ document.addEventListener("DOMContentLoaded", function(){
         popup.style.display="none";
     })
 
-    popup.addEventListener('click', function(event){
-            if(event.target!=pop_menu)
-            popup.style.display="none";        
+    window.addEventListener('click', function(event){
+        if(event.target===popup){
+            popup.style.display="none";
+        }
     });
+    /*otro pero tengo que asignar todo lo que no quiero que abra (pop_menu,etc..)
+    popup.addEventListener('click', function(event){
+        if(event.target!=pop_menu)
+        popup.style.display="none";        
+    });*/
 
     /*
     function windowsClosed(){
